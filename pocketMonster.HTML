@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Pocket Monster Rolodex</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel='stylesheet'  href='materialize.min.css'>
+    <script src="materialize.min.js"></script>
+    
+    <style>
+        .row > div.col {
+            padding: 10px;
+
+        }
+
+        .row  {
+            margin: 40px auto;
+        }
+
+        .container > div.row{
+            border: 1px solid black;
+            background-color: lightGray;
+        }
+
+        #random {
+            width: 200px;
+        }
+        
+        .rowCards{
+            margin: 40px auto;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h1 align = 'center'>Pocket Monster Rolodex</h1>
+    <div id="container2" class = 'container' hidden >
+        <div class ='row' style="background-color: lightgoldenrodyellow;">
+        <h3 id="name" align="center" style="background-color: lightblue;">Current Pocket Monster Card: </h3>
+            <div class = 'col s12 m3 l3' align="center">
+                <img src ="http://www.serebii.net/pokemongo/pokemon/001.png" id = "cardImg" width="200" height="200">
+            </div>
+            <div class ='col s12 m3 l3' style="background-color: lightgoldenrodyellow;">
+                <p id="height" >Height: </p>
+                <p id="weight" >Weight: </p>
+                <p id="type"  >Type: </p>
+                <p id="weakness" >Weaknesses: </p>
+                <p id='candy' >Candy: </p>
+            </div>
+        </div>
+    </div>
+    <div id ='container' class='container'>
+        <div class = 'row'>
+            <div class = "col s12 m6 l6  flow-text" align="center">
+                <button class="btn waves-effect waves-light" id="random" onclick="showCard()">
+                    <span>Random Card</span>
+                    <i href= '#' class ='material-icons'>shuffle</i>
+                </button>
+            </div>
+            <div class = "col s12 m2 l2 " >
+                <p align = 'right'>Sort By</p>
+            </div>
+            <div class = "col s12 m4 l4 " align="left">
+                <select class = "browser-default" style = "background-color: lightslategray;"    id="sort" onChange="handleDropdownChange()">
+                    <option value="">Lowest Number (First)</option>
+                </select>
+            </div>
+        </div>
+        <div id = 'cardRow' class = "row">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src='pocketMonster.js'></script> 
+</body>
+</html>
